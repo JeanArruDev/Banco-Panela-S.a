@@ -1,0 +1,77 @@
+ ---------------------------------------------------------------------
+|                        <<interface>>                              |
+|                        IUserService                               |
+ ---------------------------------------------------------------------
+| +createUser(user: User): User                                     |
+| +updateUser(userId: String, user: User): User                     |
+| +getUser(userId: String): User                                    |
+| +deleteUser(userId: String): void                                 |
+ ---------------------------------------------------------------------
+
+ ---------------------------------------------------------------------
+|                              User                                  |
+ ---------------------------------------------------------------------
+| -userId: String                                                   |
+| -name: String                                                     |
+| -cpf: String                                                      |
+| -birthDate: Date                                                  |
+| -gender: String                                                   |
+| -address: String                                                  |
+| -specialNeeds: String                                             |
+| -relationWithHolder: String                                       |
+ ---------------------------------------------------------------------
+| +User(name: String, cpf: String, birthDate: Date, gender: String, | 
+|       address: String, specialNeeds: String, relationWithHolder:  |
+|       String)                                                     |
+| +getUserId(): String                                              |
+| +setUserId(userId: String): void                                  |
+| +getName(): String                                                |
+| +setName(name: String): void                                      |
+| +getCpf(): String                                                 |
+| +setCpf(cpf: String): void                                        |
+| +getBirthDate(): Date                                             |
+| +setBirthDate(birthDate: Date): void                              |
+| +getGender(): String                                              |
+| +setGender(gender: String): void                                  |
+| +getAddress(): String                                             |
+| +setAddress(address: String): void                                |
+| +getSpecialNeeds(): String                                        |
+| +setSpecialNeeds(specialNeeds: String): void                      |
+| +getRelationWithHolder(): String                                  |
+| +setRelationWithHolder(relationWithHolder: String): void          |
+ ---------------------------------------------------------------------
+
+ ---------------------------------------------------------------------
+|                              UserRepository                        |
+ ---------------------------------------------------------------------
+| -users: Map<String, User>                                         |
+ ---------------------------------------------------------------------
+| +UserRepository(): void                                           |
+| +save(user: User): User                                           |
+| +findById(userId: String): User                                   |
+| +deleteById(userId: String): void                                 |
+ ---------------------------------------------------------------------
+
+ ---------------------------------------------------------------------
+|                              UserController                        |
+ ---------------------------------------------------------------------
+| -userService: IUserService                                        |
+ ---------------------------------------------------------------------
+| +UserController(userService: IUserService): void                  |
+| +createUser(user: User): User                                     |
+| +updateUser(userId: String, user: User): User                     |
+| +getUser(userId: String): User                                    |
+| +deleteUser(userId: String): void                                 |
+ ---------------------------------------------------------------------
+
+ ---------------------------------------------------------------------
+|                              UserService                           |
+ ---------------------------------------------------------------------
+| -userRepository: UserRepository                                    |
+ ---------------------------------------------------------------------
+| +UserService(userRepository: UserRepository): void                |
+| +createUser(user: User): User                                     |
+| +updateUser(userId: String, user: User): User                     |
+| +getUser(userId: String): User                                    |
+| +deleteUser(userId: String): void                                 |
+ ---------------------------------------------------------------------
